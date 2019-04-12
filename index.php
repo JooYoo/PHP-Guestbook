@@ -1,6 +1,6 @@
 <?php
 session_start();
-$logged_in = isset($_SESSION['username']);
+$logged_in = isset($_SESSION['username']) && isset($_SESSION['iduser']);
 $user = isset($_SESSION['username']) ? $_SESSION['username'] : "";
 $iduser = isset($_SESSION['iduser']) ? $_SESSION['iduser'] : "";
 

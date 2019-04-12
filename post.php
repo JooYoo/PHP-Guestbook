@@ -22,6 +22,12 @@ if(isset($_REQUEST["username"])){
 	}
 	
 	if($login_success==0){
-	 header("Location: index.php");
+		unset($_SESSION["error"]);
+		header("Location: index.php");
+	}
+	else
+	{
+		$_SESSION["error"] = "error";
+		 header("Location: login.php");
 	}
 ?>

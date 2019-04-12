@@ -1,6 +1,14 @@
+<?php
+session_start();
+$error="";
+if(isset($_SESSION["error"])){
+	$error="Falscher Benutzername/Passwort";
+}
+?>
 <html lang="de">
 <head></head>
 <body>
+<p><?php echo $error; ?></p>
 <form action="post.php" method="POST" >
 <input type="text" name="username" placeholder="Benutzername" style="width:175px">
 <br>
