@@ -10,11 +10,11 @@ if ($mysqli->connect_errno) {
 }
 
 if (isset($_POST["text"]) && $logged_in) {
-	$insert_comment = "INSERT INTO comment ('txt', 'userID') VALUES ('" . $_POST["text"] . "', '$iduser')";
+	$insert_comment = "INSERT INTO comment (txt, userID) VALUES ('" . $_POST["text"] . "', '$iduser')";
 	$mysqli->query($insert_comment);
 }	
 
-$get_comments = "SELECT u.username, c.txt FROM comment c JOIN user u ON c.userID = u.iduser";
+$get_comments = "SELECT u.username, c.txt FROM comment c JOIN user u ON c.userID = u.iduser ORDER BY c.idcomment DESC";
 $result = $mysqli->query($get_comments);
 
 ?>
