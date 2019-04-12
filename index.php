@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
 <footer>
 <p> 
 <?php 
-echo $logged_in ? "Logged in as: $user" : "<a href='login.php'>Login/Registrieren</a>";
+echo $logged_in ? "Logged in as: $user | <a href='logout.php'>Logout</a>" : "<a href='login.php'>Login/Registrieren</a>";
 
 ?>
 </p>
